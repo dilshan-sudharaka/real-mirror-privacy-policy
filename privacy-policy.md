@@ -1,0 +1,60 @@
+**Privacy Policy for Real Mirror**
+
+Effective Date: March 9, 2025
+
+Thank you for using Real Mirror. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.
+
+### 1. Information We Collect
+#### a. Information You Provide
+- The app does not require user registration.
+- Any images captured or edited within the app remain on the user’s device and are not uploaded to external servers.
+
+#### b. Automatically Collected Information
+- The app may collect usage data, such as how many times the camera button is pressed, to determine when to show ads.
+- We collect anonymized analytics data to improve the app’s performance and user experience.
+
+### 2. How We Use Information
+We use collected data to:
+- Provide camera and gallery functionalities.
+- Improve app performance and user experience.
+- Display advertisements to generate revenue.
+- Show a rate app prompt for feedback and reviews.
+
+### 3. Permissions We Request
+To provide the features of our app, we require the following permissions:
+- **Camera Permission** (`android.permission.CAMERA`): Required for taking photos. This permission is only requested when the user accesses the camera.
+- **Read Media Images Permission** (`android.permission.READ_MEDIA_IMAGES` and `android.permission.READ_EXTERNAL_STORAGE`): Required to access and display images in the app's gallery.
+- **Internet and Network Access Permissions** (`android.permission.INTERNET`, `android.permission.ACCESS_NETWORK_STATE`): Required for displaying ads and checking internet connectivity.
+
+### 4. Advertising
+- We use **Google AdMob** to display ads (banner and interstitial).
+- Ad networks may collect anonymous usage data for ad personalization.
+- Refer to [Google's Advertising Policies](https://support.google.com/admob/answer/6128543) for more details.
+
+### 5. Face Detection and Analysis
+- The app uses **ML Kit Face Detection** to detect face angles and provide user feedback.
+- No facial data is stored, transmitted, or shared with third parties.
+- Refer to [ML Kit Terms of Service](https://developers.google.com/ml-kit/terms) for more details.
+
+### 6. Data Retention and Security
+- We do not store personal data on our servers.
+- Photos and edits remain on the user's device unless manually deleted.
+- The app does not share user data with third parties.
+- We implement **industry-standard security measures** for data protection.
+
+### 7. Third-Party Services
+We use the following third-party libraries and services:
+- **Google AdMob** (for advertisements)
+- **Google Play Services (ML Kit Face Detection)** (for face detection)
+- **AndroidX CameraX** (for camera functionalities)
+- **Glide, RecyclerView, ViewPager2, PhotoView** (for UI improvements)
+
+### 8. Children's Privacy
+This app is not intended for children under 13. We do not knowingly collect personal data from children.
+
+### 9. Changes to This Privacy Policy
+We may update this policy from time to time. Any changes will be reflected by updating the "Effective Date" at the top of this policy.
+
+### 10. Contact Us
+If you have any questions or concerns about this Privacy Policy, you can contact us at dilshansudaraka98@gmail.com.
+
