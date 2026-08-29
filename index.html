@@ -1,95 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Real Mirror</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Real Mirror</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:            #FAF7FC;
+    --surface:       #FFFFFF;
+    --surface-edge:  #F0E8F7;
+    --ink:           #4A3B5C;
+    --ink-soft:      #8C7C9E;
+    --purple:        #8B5FBF;
+    --purple-deep:   #6D3FA0;
+    --pink:          #E85D9C;
+    --pink-soft:     #FBE4EF;
+    --purple-soft:   #F1E9FA;
+    --line:          #EBE0F5;
+    --shadow:        0 10px 30px -12px rgba(139, 95, 191, 0.18);
+    --shadow-sm:     0 4px 14px -6px rgba(139, 95, 191, 0.14);
+    --radius-lg:     28px;
+    --radius-md:     18px;
+    --radius-sm:     12px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, #F7ECFB 0%, transparent 60%),
+      radial-gradient(1000px 500px at 110% 10%, #FDEBF4 0%, transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1, h2, h3, .display{
+    font-family:'Poppins', 'Inter', sans-serif;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:var(--purple-deep); text-decoration:none; border-bottom:1px solid rgba(139,95,191,0.35); transition:border-color .15s ease, color .15s ease; }
+  a:hover{ color:var(--pink); border-color:var(--pink); }
+  a:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+
+  ::selection{ background:var(--pink-soft); color:var(--purple-deep); }
+
+  /* ---------- Layout shell ---------- */
+
+  .shell{ max-width:1180px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:76px 0 64px;
+    text-align:center;
+  }
+
+  .hero-glow{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(420px 220px at 50% 0%, rgba(232,93,156,0.16), transparent 70%),
+      radial-gradient(520px 260px at 20% 40%, rgba(139,95,191,0.14), transparent 70%);
+    pointer-events:none;
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--purple-deep);
+    background:var(--purple-soft);
+    border:1px solid var(--line);
+    padding:6px 14px;
+    border-radius:100px;
+    margin-bottom:18px;
+  }
+
+  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:linear-gradient(135deg, var(--purple), var(--pink)); }
+
+  h1.title{
+    font-size:clamp(28px, 4.4vw, 42px);
+    font-weight:700;
+    margin:0 0 14px;
+    background:linear-gradient(100deg, var(--purple-deep) 15%, var(--pink) 85%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .subtitle{
+    max-width:560px;
+    margin:0 auto;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+
+  .effective-pill{
+    display:inline-block;
+    margin-top:22px;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    background:var(--surface);
+    border:1px solid var(--line);
+    padding:8px 16px;
+    border-radius:100px;
+    box-shadow:var(--shadow-sm);
+  }
+
+  .effective-pill strong{ color:var(--purple-deep); font-weight:600; }
+
+  /* ---------- Body layout: nav + content ---------- */
+
+  .layout{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
+    padding-bottom:90px;
+    align-items:start;
+  }
+
+  /* Side nav (desktop) */
+  .side-nav{
+    position:sticky;
+    top:28px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    padding:18px 16px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-sm);
+  }
+
+  .side-nav-label{
+    font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-soft);
+    padding:2px 10px 10px;
+  }
+
+  .side-nav a{
+    border:none;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    padding:8px 10px;
+    border-radius:10px;
+    display:flex; align-items:center; gap:9px;
+    transition:background .15s ease, color .15s ease;
+  }
+
+  .side-nav a .n{
+    font-family:'Poppins', sans-serif;
+    font-size:10.5px; font-weight:600;
+    color:var(--purple);
+    width:18px; height:18px;
+    border-radius:50%;
+    background:var(--purple-soft);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+
+  .side-nav a:hover{ background:var(--purple-soft); color:var(--purple-deep); }
+  .side-nav a.active{ background:linear-gradient(100deg, var(--purple-soft), var(--pink-soft)); color:var(--purple-deep); }
+  .side-nav a.active .n{ background:linear-gradient(135deg, var(--purple), var(--pink)); color:#fff; }
+
+  /* Mobile pill scroll nav */
+  .mobile-nav{
+    display:none;
+    gap:8px;
+    overflow-x:auto;
+    padding:4px 4px 14px;
+    margin-bottom:8px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .mobile-nav::-webkit-scrollbar{ display:none; }
+
+  .mobile-nav a{
+    border:none;
+    flex:0 0 auto;
+    font-size:13px; font-weight:500;
+    color:var(--purple-deep);
+    background:var(--surface);
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:100px;
+    white-space:nowrap;
+    box-shadow:var(--shadow-sm);
+  }
+
+  /* ---------- Section cards ---------- */
+
+  .sections{ display:flex; flex-direction:column; gap:18px; }
+
+  section.card{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:32px 34px;
+    box-shadow:var(--shadow-sm);
+    scroll-margin-top:24px;
+    overflow:hidden;
+  }
+
+  section.card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg, var(--purple), var(--pink));
+    opacity:0.85;
+  }
+
+  .card-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:16px;
+  }
+
+  .card-num{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    color:#fff;
+    width:34px; height:34px;
+    border-radius:11px;
+    background:linear-gradient(150deg, var(--purple), var(--pink));
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    box-shadow:0 6px 14px -6px rgba(139,95,191,0.5);
+  }
+
+  h2{ font-size:19px; font-weight:600; margin:0; }
+
+  h3{ font-size:14.5px; font-weight:600; margin:20px 0 8px; color:var(--purple-deep); }
+
+  section.card p{ margin:0 0 12px; color:var(--ink); font-size:15px; }
+  section.card p:last-child{ margin-bottom:0; }
+
+  section.card ul{ margin:0 0 4px; padding-left:0; list-style:none; }
+
+  section.card li{
+    position:relative;
+    padding:5px 0 5px 24px;
+    font-size:15px;
+    color:var(--ink);
+  }
+
+  section.card > ul > li::before,
+  section.card ul.plain > li::before{
+    content:"";
+    position:absolute;
+    left:2px; top:15px;
+    width:7px; height:7px;
+    border-radius:2px;
+    background:linear-gradient(135deg, var(--purple), var(--pink));
+    transform:rotate(45deg);
+  }
+
+  .service-list li{
+    display:flex; align-items:center; gap:10px;
+    padding:9px 12px;
+    background:var(--purple-soft);
+    border-radius:var(--radius-sm);
+    margin-bottom:8px;
+    font-size:14.5px;
+    font-weight:500;
+  }
+  .service-list li::before{ display:none; }
+  .service-list li .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:linear-gradient(135deg, var(--purple), var(--pink));
+    flex-shrink:0;
+  }
+
+  .note-box{
+    background:var(--pink-soft);
+    border:1px solid #F6D3E5;
+    border-radius:var(--radius-sm);
+    padding:14px 18px;
+    font-size:14px;
+    color:var(--purple-deep);
+    margin-top:14px;
+  }
+  .note-box strong{ color:var(--pink); }
+
+  strong{ color:var(--purple-deep); font-weight:600; }
+
+  /* ---------- Footer ---------- */
+
+  .footer{
+    text-align:center;
+    padding:40px 0 60px;
+    border-top:1px solid var(--line);
+    margin-top:10px;
+  }
+
+  .footer-mark{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    color:var(--purple-deep);
+    margin-bottom:8px;
+  }
+
+  .footer p{ color:var(--ink-soft); font-size:13.5px; margin:4px 0; }
+  .footer a{ font-weight:500; }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 880px){
+    .layout{ grid-template-columns:1fr; gap:0; }
+    .side-nav{ display:none; }
+    .mobile-nav{ display:flex; }
+    section.card{ padding:26px 22px; }
+    .hero{ padding:56px 0 40px; }
+  }
+
+  @media (max-width: 480px){
+    .shell{ padding:0 16px; }
+    h1.title{ font-size:26px; }
+    .card-head{ gap:11px; }
+    .card-num{ width:30px; height:30px; font-size:13px; border-radius:9px; }
+    h2{ font-size:17px; }
+  }
+</style>
 </head>
 <body>
-    <h1>Privacy Policy for Real Mirror</h1>
-    <p><strong>Effective Date:</strong> March 9, 2025</p>
-    <p>Thank you for using Real Mirror. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
-    
-    <h2>1. Information We Collect</h2>
-    <h3>a. Information You Provide</h3>
-    <ul>
-        <li>The app does not require user registration.</li>
-        <li>Any images captured or edited within the app remain on the user’s device and are not uploaded to external servers.</li>
-    </ul>
-    
-    <h3>b. Automatically Collected Information</h3>
-    <ul>
-        <li>The app may collect usage data, such as how many times the camera button is pressed, to determine when to show ads.</li>
-        <li>We collect anonymized analytics data to improve the app’s performance and user experience.</li>
-    </ul>
-    
-    <h2>2. How We Use Information</h2>
-    <ul>
-        <li>Provide camera and gallery functionalities.</li>
-        <li>Improve app performance and user experience.</li>
-        <li>Display advertisements to generate revenue.</li>
-        <li>Show a rate app prompt for feedback and reviews.</li>
-    </ul>
-    
-    <h2>3. Permissions We Request</h2>
-    <ul>
-        <li><strong>Camera Permission</strong> - Required for taking photos. This permission is only requested when the user accesses the camera.</li>
-        <li><strong>Read Media Images Permission</strong> - Required to access and display images in the app's gallery.</li>
-        <li><strong>Internet and Network Access Permissions</strong> - Required for displaying ads and checking internet connectivity.</li>
-    </ul>
-    
-    <h2>4. Advertising</h2>
-    <p>We use <strong>Google AdMob</strong> to display ads (banner and interstitial). Ad networks may collect anonymous usage data for ad personalization.</p>
-    <p>Refer to <a href="https://support.google.com/admob/answer/6128543" target="_blank">Google's Advertising Policies</a> for more details.</p>
-    
-    <h2>5. Face Detection and Analysis</h2>
-    <p>The app uses <strong>ML Kit Face Detection</strong> to detect face angles and provide user feedback.</p>
-    <p>No facial data is stored, transmitted, or shared with third parties.</p>
-    <p>Refer to <a href="https://developers.google.com/ml-kit/terms" target="_blank">ML Kit Terms of Service</a> for more details.</p>
-    
-    <h2>6. Data Retention and Security</h2>
-    <ul>
-        <li>We do not store personal data on our servers.</li>
-        <li>Photos and edits remain on the user's device unless manually deleted.</li>
-        <li>The app does not share user data with third parties.</li>
-        <li>We implement <strong>industry-standard security measures</strong> for data protection.</li>
-    </ul>
-    
-    <h2>7. Third-Party Services</h2>
-    <ul>
-        <li><strong>Google AdMob</strong> (for advertisements)</li>
-        <li><strong>Google Play Services (ML Kit Face Detection)</strong> (for face detection)</li>
-        <li><strong>AndroidX CameraX</strong> (for camera functionalities)</li>
-        <li><strong>Glide, RecyclerView, ViewPager2, PhotoView</strong> (for UI improvements)</li>
-    </ul>
-    
-    <h2>8. Children's Privacy</h2>
-    <p>This app is not intended for children under 13. We do not knowingly collect personal data from children.</p>
-    
-    <h2>9. Changes to This Privacy Policy</h2>
-    <p>We may update this policy from time to time. Any changes will be reflected by updating the "Effective Date" at the top of this policy.</p>
-    
-    <h2>10. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, you can contact us at <strong>realmirror.contact@gmail.com</strong>.</p>
+
+  <header class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="shell">
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Real Mirror</span>
+      <h1 class="title">Privacy Policy</h1>
+      <p class="subtitle">A plain-language look at what Real Mirror collects, what it doesn't, and how your photos and Pro subscription are handled.</p>
+      <div class="effective-pill">Effective date: <strong>August 26, 2026</strong></div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <div class="layout">
+
+      <nav class="side-nav" aria-label="Section navigation">
+        <span class="side-nav-label">On this page</span>
+        <a href="#s1" class="active"><span class="n">1</span>Information we collect</a>
+        <a href="#s2"><span class="n">2</span>How we use information</a>
+        <a href="#s3"><span class="n">3</span>Permissions we request</a>
+        <a href="#s4"><span class="n">4</span>Advertising</a>
+        <a href="#s5"><span class="n">5</span>Subscriptions &amp; payments</a>
+        <a href="#s6"><span class="n">6</span>Face detection</a>
+        <a href="#s7"><span class="n">7</span>Data retention &amp; security</a>
+        <a href="#s8"><span class="n">8</span>Third-party services</a>
+        <a href="#s9"><span class="n">9</span>Children's privacy</a>
+        <a href="#s10"><span class="n">10</span>Policy changes</a>
+        <a href="#s11"><span class="n">11</span>Contact us</a>
+      </nav>
+
+      <nav class="mobile-nav" aria-label="Section navigation">
+        <a href="#s1">Collection</a>
+        <a href="#s2">Use</a>
+        <a href="#s3">Permissions</a>
+        <a href="#s4">Ads</a>
+        <a href="#s5">Subscriptions</a>
+        <a href="#s6">Face detection</a>
+        <a href="#s7">Retention</a>
+        <a href="#s8">Third parties</a>
+        <a href="#s9">Children</a>
+        <a href="#s10">Changes</a>
+        <a href="#s11">Contact</a>
+      </nav>
+
+      <main class="sections">
+
+        <section class="card" id="s1">
+          <div class="card-head"><span class="card-num">1</span><h2>Information We Collect</h2></div>
+
+          <h3>Information you provide</h3>
+          <ul>
+            <li>The app does not require user registration.</li>
+            <li>Any images captured or edited within the app remain on your device and are not uploaded to external servers.</li>
+          </ul>
+
+          <h3>Automatically collected information</h3>
+          <ul>
+            <li>The app may collect usage data, such as how many times the camera button is pressed, to determine when to show ads.</li>
+            <li>We collect anonymized analytics data to improve the app's performance and user experience.</li>
+          </ul>
+        </section>
+
+        <section class="card" id="s2">
+          <div class="card-head"><span class="card-num">2</span><h2>How We Use Information</h2></div>
+          <ul>
+            <li>Provide camera and gallery functionalities.</li>
+            <li>Improve app performance and user experience.</li>
+            <li>Display advertisements to generate revenue.</li>
+            <li>Show a rate app prompt for feedback and reviews.</li>
+            <li>Provide and manage optional Pro subscription features.</li>
+          </ul>
+        </section>
+
+        <section class="card" id="s3">
+          <div class="card-head"><span class="card-num">3</span><h2>Permissions We Request</h2></div>
+          <ul>
+            <li><strong>Camera permission</strong> — required for taking photos. Only requested when you access the camera.</li>
+            <li><strong>Read media images permission</strong> — required to access and display images in the app's gallery.</li>
+            <li><strong>Internet and network access permissions</strong> — required for displaying ads, checking internet connectivity, and processing subscription purchases.</li>
+          </ul>
+        </section>
+
+        <section class="card" id="s4">
+          <div class="card-head"><span class="card-num">4</span><h2>Advertising</h2></div>
+          <p>We use <strong>Google AdMob</strong> to display ads (banner and interstitial). AdMob uses the following mediation partners to help serve ads, who may also collect anonymous usage data for ad personalization:</p>
+          <ul class="service-list">
+            <li><span class="dot" aria-hidden="true"></span>InMobi</li>
+            <li><span class="dot" aria-hidden="true"></span>Meta Audience Network (Facebook)</li>
+          </ul>
+          <p>Refer to <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google's Advertising Policies</a>, <a href="https://www.inmobi.com/trust-center" target="_blank" rel="noopener">InMobi's Privacy Policy</a>, and <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Meta's Privacy Policy</a> for more details.</p>
+        </section>
+
+        <section class="card" id="s5">
+          <div class="card-head"><span class="card-num">5</span><h2>Subscriptions and Payments</h2></div>
+          <p>Real Mirror offers an optional auto-renewing subscription ("Real Mirror Pro") that removes ads and unlocks additional features.</p>
+          <p>All payments are processed entirely by <strong>Google Play Billing</strong>. We do not receive, collect, or store your payment card details, billing address, or any other payment information — Google handles this directly.</p>
+          <p>The app stores only whether your account currently has an active Pro subscription, cached on your device, so features can be unlocked without checking online every time.</p>
+          <p>Subscription price, billing period, and auto-renewal terms are shown before purchase and are also available in the Google Play Store.</p>
+          <div class="note-box"><strong>Managing your subscription:</strong> subscriptions renew automatically unless cancelled before the renewal date. You can manage or cancel anytime from Google Play's subscription settings, also linked directly from the app's Settings screen. Refunds follow Google Play's refund policies, not ours directly.</div>
+        </section>
+
+        <section class="card" id="s6">
+          <div class="card-head"><span class="card-num">6</span><h2>Face Detection and Analysis</h2></div>
+          <p>The app uses <strong>ML Kit Face Detection</strong> to detect face angles and provide user feedback.</p>
+          <p>No facial data is stored, transmitted, or shared with third parties.</p>
+          <p>Refer to <a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener">ML Kit Terms of Service</a> for more details.</p>
+        </section>
+
+        <section class="card" id="s7">
+          <div class="card-head"><span class="card-num">7</span><h2>Data Retention and Security</h2></div>
+          <ul>
+            <li>We do not store personal data on our servers.</li>
+            <li>Photos and edits remain on your device unless manually deleted.</li>
+            <li>The app does not share user data with third parties.</li>
+            <li>We implement <strong>industry-standard security measures</strong> for data protection.</li>
+          </ul>
+        </section>
+
+        <section class="card" id="s8">
+          <div class="card-head"><span class="card-num">8</span><h2>Third-Party Services</h2></div>
+          <ul class="service-list">
+            <li><span class="dot" aria-hidden="true"></span>Google AdMob — advertisements</li>
+            <li><span class="dot" aria-hidden="true"></span>InMobi — ad mediation</li>
+            <li><span class="dot" aria-hidden="true"></span>Meta Audience Network — ad mediation</li>
+            <li><span class="dot" aria-hidden="true"></span>Google Play Billing — subscription purchases</li>
+            <li><span class="dot" aria-hidden="true"></span>Google Play Services (ML Kit Face Detection) — face detection</li>
+            <li><span class="dot" aria-hidden="true"></span>AndroidX CameraX — camera functionality</li>
+            <li><span class="dot" aria-hidden="true"></span>Glide, RecyclerView, ViewPager2, PhotoView — UI improvements</li>
+          </ul>
+        </section>
+
+        <section class="card" id="s9">
+          <div class="card-head"><span class="card-num">9</span><h2>Children's Privacy</h2></div>
+          <p>This app is not intended for children under 13. We do not knowingly collect personal data from children.</p>
+        </section>
+
+        <section class="card" id="s10">
+          <div class="card-head"><span class="card-num">10</span><h2>Changes to This Privacy Policy</h2></div>
+          <p>We may update this policy from time to time. Any changes will be reflected by updating the "Effective Date" at the top of this policy.</p>
+        </section>
+
+        <section class="card" id="s11">
+          <div class="card-head"><span class="card-num">11</span><h2>Contact Us</h2></div>
+          <p>If you have any questions or concerns about this Privacy Policy, you can contact us at <strong>realmirror.contact@gmail.com</strong>.</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-mark">Real Mirror</div>
+      <p>Questions about this policy? Write to <a href="mailto:realmirror.contact@gmail.com">realmirror.contact@gmail.com</a></p>
+      <p>&copy; 2026 Real Mirror. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Highlight the active section link on scroll (desktop side-nav only)
+    (function(){
+      var sections = Array.prototype.slice.call(document.querySelectorAll('section.card'));
+      var links = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+      if (!sections.length || !links.length || !('IntersectionObserver' in window)) return;
+
+      var map = {};
+      links.forEach(function(link){
+        var id = link.getAttribute('href').slice(1);
+        map[id] = link;
+      });
+
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          var link = map[entry.target.id];
+          if (!link) return;
+          if (entry.isIntersecting){
+            links.forEach(function(l){ l.classList.remove('active'); });
+            link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+      sections.forEach(function(s){ observer.observe(s); });
+    })();
+  </script>
+
 </body>
 </html>
 
