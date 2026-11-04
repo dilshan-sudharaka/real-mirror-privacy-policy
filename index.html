@@ -359,7 +359,7 @@
       <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Real Mirror</span>
       <h1 class="title">Privacy Policy</h1>
       <p class="subtitle">A plain-language look at what Real Mirror collects, what it doesn't, and how your photos, face scans, ads and Pro subscription are handled.</p>
-      <div class="effective-pill">Effective date: <strong>October 18, 2026</strong></div>
+      <div class="effective-pill">Effective date: <strong>November 4, 2026</strong></div>
     </div>
   </header>
 
@@ -412,7 +412,7 @@
             <li><strong>No account.</strong> You don't sign up, log in or give us your name or email address to use the app.</li>
             <li><strong>Your photos and face scans stay on your device.</strong> We have no servers that receive them, and the app never uploads them.</li>
             <li><strong>Face analysis happens on your phone.</strong> The camera image is analysed in real time on the device and is not sent to us or to anyone else.</li>
-            <li><strong>Ads and payments involve partners.</strong> Free users see ads served by Google AdMob and its mediation partners. Payments for Real Mirror Pro are handled entirely by Google Play.</li>
+            <li><strong>Ads, ad measurement and payments involve partners.</strong> Free users see ads served by Google AdMob and its mediation partners. Payments for Real Mirror Pro are handled entirely by Google Play. If you agree, a TikTok measurement service tells us whether our TikTok ads led to installs and purchases (see section 7); it never receives your photos, face scans or face-shape results.</li>
             <li><strong>You stay in control.</strong> You can change your answers, manage ad choices, delete photos and cancel a subscription at any time (see section 11).</li>
           </ul>
         </section>
@@ -433,7 +433,8 @@
             <li><strong>Counters kept on your device.</strong> The app keeps simple counters, such as how many times you tapped the camera button or opened the app, to decide when to show an ad or the Pro offer. They never leave your device through us.</li>
             <li><strong>Subscription status.</strong> A single yes/no value for whether your Google Play account has an active Pro subscription, cached on your device so features unlock without a network check every time.</li>
             <li><strong>Information collected by our ad and Google partners.</strong> When ads are shown or a purchase is made, Google and the ad partners listed in sections 7 and 9 may collect technical data such as your advertising ID, IP address (and the approximate location derived from it), device and operating-system details, and how you interact with ads. We do not receive that data.</li>
-            <li>We do not use our own analytics or crash-reporting service and we do not run any servers that collect your usage data.</li>
+            <li><strong>Ad-campaign measurement (TikTok), only if you agree.</strong> We advertise Real Mirror on TikTok. If you agree to the consent form (section 7), TikTok's App Events SDK, running inside the app, sends TikTok: that the app was installed, opened and opened again the next day; that a Face Shape scan finished (a bare count, never the face shape, gender, photo or any measurement); and, if you buy Pro, the price and currency of the plan (never your payment details, purchase token or Google account). To do this the SDK also sends technical data: your advertising ID, IP address, device model, operating-system and app version, language, screen size, a random ID the SDK creates, and the Google Play "install referrer" (which ad or link led to the install). We do not receive that data ourselves; TikTok shows us totals.</li>
+            <li>We do not run our own analytics or crash-reporting service and we have no servers that collect your usage data. The only measurement service in the app is the TikTok one described above, and it sends its data to TikTok, not to us.</li>
           </ul>
         </section>
 
@@ -452,7 +453,7 @@
           <p>You are asked every time Face Shape is opened without your agreement. If you choose "Not now", Face Shape is simply not available — the rest of the app keeps working. You can change your answer at any time in <strong>Settings</strong>.</p>
 
           <h3>Face Shape: gender and style suggestions</h3>
-          <p>The Face Shape result includes style suggestions (hairstyles, eyebrows, glasses, earrings, beard and necklines). The pictures used for them are <strong>built into the app</strong>. The app picks them on your device from your detected face shape and the Male/Female choice you made. Nothing about your face shape or your choice is sent anywhere.</p>
+          <p>The Face Shape result includes style suggestions (hairstyles, eyebrows, glasses, earrings, beard and necklines). The pictures used for them are <strong>built into the app</strong>. The app picks them on your device from your detected face shape and the Male/Female choice you made. Your face shape, your choice, your comparison photo and your face measurements are never sent anywhere. The one thing that can leave your device, and only if you agreed to the measurement consent in section 7, is a bare "a Face Shape scan was completed" count for our TikTok campaign, without the result.</p>
 
           <h3>Face Angle</h3>
           <p>Face Angle uses the live camera image to show how level your head is and to give on-screen guidance. It does not take or store a photo.</p>
@@ -480,6 +481,7 @@
             <li>Provide the camera, face-analysis and gallery features.</li>
             <li>Show style suggestions that suit the face shape and Male/Female choice you picked.</li>
             <li>Show ads to support the free version, and remember your ad-consent choices.</li>
+            <li>Measure whether our TikTok ads lead to installs, app opens, Face Shape scans and Pro purchases (only if you agree, see section 7).</li>
             <li>Decide when to show an ad or the Pro offer, using the on-device counters described in section 2.</li>
             <li>Provide and manage the optional Pro subscription, including restoring a purchase.</li>
             <li>Check for app updates (through Google Play) and, whenever one is enabled, show a rate-the-app prompt (through Google Play).</li>
@@ -492,7 +494,8 @@
           <ul>
             <li><strong>Camera</strong> — required for the mirror preview, taking photos and the face features. Asked for only when you open the camera.</li>
             <li><strong>Photos and media (read images)</strong> — on Android 13 and newer "Read media images", on Android 12 and older "Read external storage". Asked for only when you open the in-app gallery or view your latest photo, to list, show and delete the photos Real Mirror saved in its folder.</li>
-            <li><strong>Internet and network state</strong> — required for showing ads, the ad-consent form, Google Play purchases, update checks, downloading face-detection components through Google Play services, and checking whether you are online.</li>
+            <li><strong>Internet and network state</strong> — required for showing ads, the ad-consent form, Google Play purchases, update checks, ad-campaign measurement, downloading face-detection components through Google Play services, and checking whether you are online.</li>
+            <li><strong>Google Play install referrer and advertising ID</strong> — the app reads these through Google Play and Google Play services (no permission prompt) for ad delivery and, if you agree, for the TikTok campaign measurement in section 7.</li>
           </ul>
           <p>The app does <strong>not</strong> request access to your microphone, location, contacts, calendar, phone or messages, and it does not record video or audio. You can withdraw any permission at any time in your phone's Settings.</p>
         </section>
@@ -507,6 +510,16 @@
           <p>Ads may be personalised or non-personalised depending on your choices. Where required (for example in the European Economic Area and the United Kingdom), the app shows a consent form from <strong>Google's User Messaging Platform</strong> before ads are requested, and your choice decides whether ads are requested and how they are personalised. If you change your mind, use <strong>Settings &rarr; Privacy Options</strong> (shown where required) to review your choice. You can also reset your advertising ID or opt out of ad personalisation in your phone's own settings.</p>
           <p>The Real Mirror Pro subscription removes ads. Pro users don't see banner or full-screen ads.</p>
           <p>Refer to <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google's Advertising Policies</a>, <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Meta's Privacy Policy</a> and <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity's Privacy Policy</a> for more details.</p>
+
+          <h3>Measuring our TikTok advertising</h3>
+          <p>We advertise Real Mirror on <strong>TikTok</strong>. To find out whether those ads lead to installs, app opens, Face Shape scans and Pro purchases, the app includes TikTok's <strong>App Events SDK</strong> (provided by TikTok and its group companies). What it sends is listed in section 2. It follows the same consent answer as ads:</p>
+          <ul>
+            <li>Where a consent form is required (for example the EEA, the UK and Switzerland), the SDK does not start until you agree to it, and it needs your agreement to the purposes "store and/or access information on a device" and "measure ad performance". If you decline, nothing is sent to TikTok.</li>
+            <li>Where no form is shown, the SDK runs unless you opted out of the sale or sharing of your data in the consent form; in that case it runs in TikTok's Limited Data Use mode.</li>
+            <li>If you withdraw consent later (<strong>Settings &rarr; Privacy Options</strong>, shown where required), the SDK is stopped and what it had queued is deleted.</li>
+            <li>We switched off the SDK's optional features that record taps, button texts and screen contents, that log Google Play purchases automatically, and that send the SDK's own health metrics.</li>
+          </ul>
+          <p>Refer to <a href="https://www.tiktok.com/legal/page/row/privacy-policy/en" target="_blank" rel="noopener">TikTok's Privacy Policy</a> for how TikTok handles the data it receives.</p>
         </section>
 
         <section class="card" id="s8">
@@ -525,6 +538,7 @@
             <li><span class="dot" aria-hidden="true"></span>Google AdMob — advertisements (collects data)</li>
             <li><span class="dot" aria-hidden="true"></span>Meta Audience Network — ad mediation (collects data)</li>
             <li><span class="dot" aria-hidden="true"></span>Unity Ads — ad mediation (collects data)</li>
+            <li><span class="dot" aria-hidden="true"></span>TikTok App Events SDK — measurement of our TikTok advertising (collects data, only with your agreement)</li>
             <li><span class="dot" aria-hidden="true"></span>Google User Messaging Platform — ad-consent form</li>
             <li><span class="dot" aria-hidden="true"></span>Google Play Billing — subscription purchases (collects data)</li>
             <li><span class="dot" aria-hidden="true"></span>Google Play In-App Updates and In-App Review — update checks and the rate-the-app prompt (Google Play)</li>
@@ -541,6 +555,7 @@
             <li>Photos you took, in <strong>Pictures / Real Mirror</strong> — until you delete them.</li>
             <li>Your Male/Female choice and your answer to the Face Shape photo question — until you change them or clear the app's data.</li>
             <li>Your cached Pro status and the ad / app-open counters — until you clear the app's data or uninstall the app.</li>
+            <li>If the TikTok measurement runs: a random ID and an "installed" marker created by the SDK, and events waiting to be sent — until you clear the app's data or uninstall the app, or withdraw consent. They are excluded from backup.</li>
             <li>Nothing from your face scans is kept: no face measurements, no comparison photo, no scan history.</li>
           </ul>
           <p><strong>Backup.</strong> Android's automatic backup may include some of the app's small settings (such as your Male/Female choice and the counters) in your Google account backup, according to your phone's backup settings. Your Face Shape photo answer and your Pro status cache are excluded from backup, so on a new phone you are asked again and Pro status is re-checked with Google Play.</p>
@@ -552,12 +567,12 @@
           <ul>
             <li><strong>Gender choice</strong> — change it any time in Settings.</li>
             <li><strong>Face Shape photo permission</strong> — review or change it any time in Settings. Declining turns Face Shape off; it does not affect other features.</li>
-            <li><strong>Ad choices</strong> — use Settings &rarr; Privacy Options where shown, and your phone's advertising-ID settings.</li>
+            <li><strong>Ad choices and TikTok measurement</strong> — answer or change the consent form (Settings &rarr; Privacy Options where shown); this also starts or stops the TikTok measurement. You can also delete or reset your advertising ID in your phone's settings, or uninstall the app.</li>
             <li><strong>Permissions</strong> — turn Camera or Photos access off in your phone's Settings at any time (the related features then stop working).</li>
             <li><strong>Photos</strong> — delete them in the app's gallery or in your gallery app.</li>
             <li><strong>Subscription</strong> — manage or cancel in Google Play.</li>
           </ul>
-          <p>Because we don't hold personal data about you on our own systems, there is generally nothing for us to access, correct or delete on our side. Depending on where you live (for example the EEA, the UK or California) you may have rights over the data our ad and Google partners hold about you; please use the partners' tools and privacy policies linked above, or contact us and we will point you in the right direction. We do not sell your personal information.</p>
+          <p>Because we don't hold personal data about you on our own systems, there is generally nothing for us to access, correct or delete on our side. Depending on where you live (for example the EEA, the UK or California) you may have rights over the data our ad and Google partners hold about you; please use the partners' tools and privacy policies linked above, or contact us and we will point you in the right direction. We do not sell your personal information for money. Passing data to advertising and measurement partners (section 7) can count as "sharing" for targeted advertising under some laws; where you opt out through the consent form, the app limits or stops that.</p>
         </section>
 
         <section class="card" id="s12">
@@ -572,7 +587,7 @@
 
         <section class="card" id="s13">
           <div class="card-head"><span class="card-num">13</span><h2>Children's Privacy</h2></div>
-          <p>This app is not intended for children under 13. We do not knowingly collect personal data from children. If you believe a child has provided information through the app, contact us and we will help.</p>
+          <p>This app is not intended for children under 13. We do not knowingly collect personal data from children. If you believe a child has provided information through the app, contact us and we will help. In some countries a higher age applies for agreeing to the use of data for advertising and measurement; if that is the case where you live and you are younger than that age, please ask a parent or guardian before you answer the consent form.</p>
         </section>
 
         <section class="card" id="s14">
